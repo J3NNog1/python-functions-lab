@@ -25,3 +25,20 @@ def largest(nums):
 def largest(nums):
   nums.sort()
   return nums[-1]
+
+#part 3
+
+occurrences('fleep floop', 'e')   # returns 2
+occurrences('fleep floop', 'p')   # returns 2
+occurrences('fleep floop', 'ee')  # returns 1
+occurrences('fleep floop', 'fe')  # returns 0
+
+def occurances(string, substr):
+  # remove each occuance of substr
+  stripped_string = string.replace(substr, '')
+  # compute based on length of the strings
+  return (len(string) - len(stripped_string)) // len(substr)
+	
+# Python actually has a method to solve this too!
+def occurances(string, substr):
+  return string.count(substr)
